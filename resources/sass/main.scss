@@ -4,28 +4,101 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .layout {
-
+    //
 }
 .header {
 
 }
 .footer {
-    background-color: aquamarine;
+    background-color: #303030;
+    padding: 20px 100px 20px 100px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
     .footer__first {
-        width: 48%;
-        background-color: red;
-        margin-left: 10px;
-        text-align: center;
+        width: 30%;
+        margin-right: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        .footer__first__title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        a {
+            color: white;
+            margin-top: 5px;
+            text-decoration: none;
+        }
     }
     .footer__second {
-        width: 48%;
-        margin-right: 10px;
-        background-color: blue;
-        text-align: center;
+        width: 30%;
+        margin-left: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        .footer__second__title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .footer__second__social {
+            display: flex;
+            flex-direction: row;
+            img {
+                margin-right: 10px;
+            }
+        }
+        img {
+            background-color: white;
+            background-size: 30px;
+            border-radius: 22px;
+        }
+    }
+}
+.home {
+    .container {
+        margin-top: 60px;
+        .row {
+            text-align: center;
+
+        }
+        .featurette {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            h2{
+                text-align: left;
+            }
+            p {
+                text-align: left;
+            }
+            .col-md-7 {
+                margin-top: 7rem;
+            }
+        }
+    }
+    .home__presentation {
+        width: 100%;
+        height: 500px;
+        background-color: #303030;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home__caracteristics {
+        display: flex;
+        flex-direction: column;
+
+        .home__caracteristics__first {
+            display: flex;
+            flex-direction: column;
+        }
+        .home__caracteristics__second {
+
+        }
     }
 }
