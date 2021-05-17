@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/normalize.css": "/css/normalize.css",
+    "/css/mixins.css": "/css/mixins.css",
     "/css/main.css": "/css/main.css",
     "/css/app.css": "/css/app.css"
 }

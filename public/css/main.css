@@ -2,17 +2,25 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
 }
 
 .footer {
   background-color: #303030;
   padding: 20px 100px 20px 100px;
   width: 100%;
+  min-height: 44vh;
   display: flex;
+  margin-top: auto;
   flex-direction: row;
   justify-content: center;
   color: #fff;
   font-size: 18px;
+}
+@media (max-width: 767px) {
+  .footer {
+    flex-direction: column;
+  }
 }
 .footer .footer__first {
   width: 30%;
@@ -83,6 +91,33 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 1370px) {
+  .home .home__presentation img {
+    height: 500px;
+    width: auto;
+  }
+}
+@media (min-width: 1023px) and (max-width: 1370px) {
+  .home .home__presentation img {
+    height: 500px;
+    width: auto;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .home .home__presentation img {
+    height: 500px;
+    width: auto;
+  }
+}
+@media (max-width: 767px) {
+  .home .home__presentation {
+    height: auto;
+  }
+  .home .home__presentation img {
+    width: 375px;
+    height: auto;
+  }
+}
 .home .home__caracteristics {
   display: flex;
   flex-direction: column;
@@ -90,4 +125,258 @@ body {
 .home .home__caracteristics .home__caracteristics__first {
   display: flex;
   flex-direction: column;
+}
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register .register__form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 600px;
+  background-color: #ebebeb;
+  padding: 20px;
+  border-radius: 6px;
+}
+@media (max-width: 767px) {
+  .register .register__form {
+    width: 350px;
+  }
+}
+.register .register__form button {
+  margin-top: 10px;
+  width: 100%;
+}
+.register .register__form__title {
+  font-size: 24px;
+  text-align: center;
+}
+.register .register__form__container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .register .register__form__container {
+    flex-direction: column;
+  }
+}
+.register .register__form__container .register__form__container__left {
+  order: 1;
+  width: 48%;
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__left {
+    width: 100%;
+  }
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__name {
+  margin-top: 10px;
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__name h1 {
+  font-size: 16px;
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__name input {
+  height: 40px;
+  width: 96%;
+  border-radius: 6px;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__left .register__form__container__left__name input {
+    width: 100%;
+  }
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__mail {
+  margin-top: 10px;
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__mail h1 {
+  font-size: 16px;
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__mail input {
+  height: 40px;
+  width: 96%;
+  border-radius: 6px;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__left .register__form__container__left__mail input {
+    width: 100%;
+  }
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__password {
+  margin-top: 10px;
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__password h1 {
+  font-size: 16px;
+}
+.register .register__form__container .register__form__container__left .register__form__container__left__password input {
+  height: 40px;
+  width: 96%;
+  border-radius: 6px;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__left .register__form__container__left__password input {
+    width: 100%;
+  }
+}
+.register .register__form__container .register__form__container__right {
+  order: 2;
+  width: 48%;
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__right {
+    width: 100%;
+  }
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__lastname {
+  margin-top: 10px;
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__lastname h1 {
+  font-size: 16px;
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__lastname input {
+  height: 40px;
+  width: 96%;
+  border-radius: 6px;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__right .register__form__container__right__lastname input {
+    width: 100%;
+  }
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__confirmMail {
+  margin-top: 10px;
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__confirmMail h1 {
+  font-size: 16px;
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__confirmMail input {
+  height: 40px;
+  width: 96%;
+  border-radius: 6px;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__right .register__form__container__right__confirmMail input {
+    width: 100%;
+  }
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__fiability {
+  margin-top: 10px;
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__fiability h1 {
+  font-size: 16px;
+}
+.register .register__form__container .register__form__container__right .register__form__container__right__fiability .register__form__container__right__fiability__progress {
+  margin-top: 5px;
+  height: 30px;
+  width: 80%;
+  border-radius: 6px;
+  background: red;
+  background: linear-gradient(90deg, red 0%, #00ff48 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#00ff48",GradientType=1);
+}
+@media (max-width: 767px) {
+  .register .register__form__container .register__form__container__right .register__form__container__right__fiability .register__form__container__right__fiability__progress {
+    width: 100%;
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login .login__form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 400px;
+  background-color: #ebebeb;
+  padding: 20px;
+  border-radius: 6px;
+}
+@media (max-width: 767px) {
+  .login .login__form {
+    width: 350px;
+  }
+}
+.login .login__form button {
+  margin-top: 10px;
+  width: 100%;
+}
+.login .login__form__title {
+  font-size: 24px;
+  text-align: center;
+}
+.login .login__form__container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.login .login__form__container .login__form__container__mail {
+  margin-top: 10px;
+}
+.login .login__form__container .login__form__container__mail h1 {
+  font-size: 16px;
+}
+.login .login__form__container .login__form__container__mail input {
+  height: 40px;
+  width: 100%;
+  border-radius: 6px;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+.login .login__form__container .login__form__container__password {
+  margin-top: 10px;
+}
+.login .login__form__container .login__form__container__password h1 {
+  font-size: 16px;
+}
+.login .login__form__container .login__form__container__password input {
+  height: 40px;
+  width: 100%;
+  border-radius: 6px;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .login .login__form__container .login__form__container__password input {
+    width: 100%;
+  }
+}
+.login .login__form__refer {
+  text-align: center;
+}
+.login .login__form__refer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
 }
