@@ -65,8 +65,11 @@ proyecto ```landing-page``` de una forma local, alias: localhost.
 ### Instalación
 
 1. Clonar el repositorio desde ```https://github.com/TheCrist422/landing-page```
-2. Instalar los paquetes de dependencias con ```npm install```
+2. Instalar los paquetes de dependencias de composer con ```composer install```
+3. Instalar los paquetes de dependencias con ```npm install``` o ```yarn install```
+4. Copiar el archivo .env.example y renombrarlo como .env solamente
 3. Abrir 2 consolas de comandos
+4. En la primera consola escribir ```php artisan key:generate```
 4. En la primera consola escribir ```php artisan serve```
 5. En la segunda consola escribir ```npm run watch```
 6. Ingresar a la direccion designada (por lo general es: http://127.0.0.1:8000/)
