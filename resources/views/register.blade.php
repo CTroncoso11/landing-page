@@ -11,25 +11,25 @@
                 <div class="register__form__container__left">
                     <div class="register__form__container__left__name">
                         <h1>Nombre</h1>
-                        <input placeholder="Cristian" />
+                        <input placeholder="Cristian" tabindex=1/>
                     </div>
                     <div class="register__form__container__left__mail">
                         <h1>Correo electronico</h1>
-                        <input placeholder="@tipo.com" type="email" />
+                        <input placeholder="@tipo.com" type="email" tabindex=3/>
                     </div>
                     <div class="register__form__container__left__password">
                         <h1>Contrasena</h1>
-                        <input placeholder="*************" type="password" />
+                        <input placeholder="*************" type="password" tabindex=5/>
                     </div>
                 </div>
                 <div class="register__form__container__right">
                     <div class="register__form__container__right__lastname">
                         <h1>Apellido</h1>
-                        <input placeholder="Troncoso" />
+                        <input placeholder="Troncoso" tabindex=2/>
                     </div>
                     <div class="register__form__container__right__confirmMail">
                         <h1>Confirmar correo</h1>
-                        <input placeholder="@tipo.com" type="email" />
+                        <input placeholder="@tipo.com" type="email" tabindex=4/>
                     </div>
                     <div class="register__form__container__right__fiability">
                         <h1>Fiabilidad</h1>
