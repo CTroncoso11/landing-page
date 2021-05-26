@@ -1,14 +1,7 @@
 @extends('layouts.default')
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Inicio de sesion</title>
-
-</head>
+@section('title', 'Esto es un login')
+@section('content')
 <div class="login">
-    @include('header.header')
     <div class="login__form">
         <div class="login__form__title">
             Iniciar sesion
@@ -20,7 +13,7 @@
             </div>
             <div class="login__form__container__password">
                 <h1>Contrasena</h1>
-                <input placeholder="*************"/>
+                <input placeholder="*************" type="password"/>
             </div>
         </div>
         <button type="button" class="btn btn-secondary">Iniciar sesion</button>
@@ -31,3 +24,4 @@
         </div>
     </div>
 </div>
+@stop

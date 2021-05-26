@@ -1,13 +1,8 @@
 @extends('layouts.default')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Inicio</title>
-</head>
+@section('title', 'Inicio')
+@section('content')
 <div class="home">
-    @include('header.header')
     <div class="home__presentation">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -118,3 +113,4 @@
 
     </div>
 </div>
+@stop
