@@ -1,18 +1,26 @@
 .dashboard {
+    display: flex;
+    justify-content: space-between;
     a {
         color: black;
         text-decoration: none;
+    }
+    input {
+        outline: none;
+        border-style: solid;
+        border-width: 0 0 2px;
+        border-color: grey;
     }
 }
 .tablaDatos {
     display: flex;
     align-items: center;
     .tablaDatos__downloadButton {
-        button {
+        a {
             display: flex;
-            justify-items: center;
+            align-items: center;
             i {
-                margin-top: 3px;
+                margin-right: 10px;
             }
         }
     }
