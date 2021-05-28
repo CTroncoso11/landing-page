@@ -155,7 +155,7 @@ body {
 }
 .register .register__form {
   background-color: #fff;
-  width: 900px;
+  width: 600px;
   margin-top: 60px;
   margin-bottom: 60px;
   border-radius: 4px;
@@ -163,6 +163,7 @@ body {
   padding-bottom: 4s0px;
   padding-left: 80px;
   padding-right: 80px;
+  box-shadow: 0px 0px 7px 6px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 767px) {
   .register .register__form {
@@ -173,7 +174,7 @@ body {
 }
 .register .register__form h1 {
   color: #1D65A6;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
 }
 .register .register__form .register__form__inputs {
@@ -209,16 +210,17 @@ body {
   margin-top: 20px;
 }
 .register .register__form .register__form__inputs .register__form__inputs__field label {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   color: #1D65A6;
 }
 .register .register__form .register__form__inputs .register__form__inputs__field input {
-  height: 50px;
+  height: 30px;
+  background-color: #fff;
   border-color: #adadad;
   border-style: solid;
-  border-width: 0 0 2px;
-  font-size: 20px;
+  border-width: 0 0 3px;
+  font-size: 16px;
   outline: none;
 }
 .register .register__form .register__form__inputs .register__form__inputs__field input:focus {
@@ -230,7 +232,7 @@ body {
 .register .register__form button {
   outline: none;
   width: 100%;
-  height: 60px;
+  height: 50px;
   background-color: #1D65A6;
   color: #fff;
   margin-top: 20px;
@@ -240,8 +242,12 @@ body {
   border-color: #1D65A6;
   font-size: 20px;
 }
+.register .register__form button:hover {
+  background-color: #2a70ad;
+}
 
 .login {
+  background-color: #B2CAE0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,9 +258,12 @@ body {
   margin-top: 60px;
   margin-bottom: 60px;
   width: 400px;
-  background-color: #ebebeb;
+  background-color: #fff;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 12px;
+  border-color: #9badbd;
+  border-width: 2px;
+  border-style: solid;
 }
 @media (max-width: 767px) {
   .login .login__form {
@@ -268,6 +277,7 @@ body {
 .login .login__form__title {
   font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 .login .login__form__container {
   margin-top: 10px;
@@ -280,14 +290,28 @@ body {
 .login .login__form__container .login__form__container__mail h1 {
   font-size: 16px;
 }
-.login .login__form__container .login__form__container__mail input {
-  height: 40px;
-  width: 100%;
-  border-radius: 6px;
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border-color: #adadad;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0 0 2px;
+}
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field i {
+  width: 30px;
+}
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field input {
+  height: 40px;
+  width: 100%;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 0;
   padding: 10px;
+  outline: none;
+}
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field:focus {
+  border-color: #B2CAE0;
 }
 .login .login__form__container .login__form__container__password {
   margin-top: 10px;
@@ -295,19 +319,25 @@ body {
 .login .login__form__container .login__form__container__password h1 {
   font-size: 16px;
 }
-.login .login__form__container .login__form__container__password input {
-  height: 40px;
-  width: 100%;
-  border-radius: 6px;
+.login .login__form__container .login__form__container__password .login__form__container__password__field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border-color: #adadad;
   border-style: solid;
-  border-width: 1px;
-  padding: 10px;
+  border-width: 0 0 2px;
 }
-@media (max-width: 767px) {
-  .login .login__form__container .login__form__container__password input {
-    width: 100%;
-  }
+.login .login__form__container .login__form__container__password .login__form__container__password__field i {
+  width: 30px;
+}
+.login .login__form__container .login__form__container__password .login__form__container__password__field input {
+  height: 40px;
+  width: 100%;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 0;
+  padding: 10px;
+  outline: none;
 }
 .login .login__form__refer {
   text-align: center;

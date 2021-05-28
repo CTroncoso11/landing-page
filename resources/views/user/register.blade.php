@@ -21,7 +21,7 @@
                     <div class="register__form__inputs__right">
                         <div class="register__form__inputs__field">
                             <label>Apellido</label>
-                            <x-input id="lastname" class="block mt-1 w-full" type="text" name="lasname" :value="old('lastname')" required autofocus  />
+                            <x-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus  />
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="register__form__inputs__right">
                         <div class="register__form__inputs__field">
-                            <label>Confirmar correo electronico</label>
+                            <label>Confirmar correo</label>
                             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
                         </div>
                     </div>
