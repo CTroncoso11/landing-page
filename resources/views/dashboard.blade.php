@@ -1,27 +1,8 @@
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Panel de control') }}
         </h2>
     </x-slot>
 
@@ -30,9 +11,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="dashboard">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-upload-{{ $cosa = Auth::user()->id}}">
                             Agregar archivos
                         </button>
+                        @include('user.upload')
                         <input placeholder="Buscar">
                     </div>
                     <table class="table table-bordered table-striped mt-4 tablaDatos">
@@ -47,8 +29,8 @@
                         </thead>
                         <tbody>
                             <tr style="">
-                                <td>Cosa</td>
-                                <td>documento.pptx</td>
+                                <td>Cosa {{ Auth::user()->name }}</td>
+                                <td>documento.pptx {{ Auth::user()->id }}</td>
                                 <td>PPT</td>
                                 <td>23 de Diciembre</td>
                                 <td>
