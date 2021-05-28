@@ -24,3 +24,28 @@
 .tablaDatos .tablaDatos__downloadButton a i {
   margin-right: 10px;
 }
+
+.uploadModal {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.uploadModal__field {
+  margin-bottom: 20px;
+}
+.uploadModal__field h1 {
+  font-size: 20px;
+}
+.uploadModal__field input {
+  width: 100%;
+}
+.uploadModal__field label:after {
+  content: "Examinar" !important;
+}
+
+.uploadModal__buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.uploadModal__buttons button {
+  margin-left: 10px;
+}

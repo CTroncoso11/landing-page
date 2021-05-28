@@ -25,3 +25,26 @@
         }
     }
 }
+.uploadModal {
+    margin-left: 80px;
+    margin-right: 80px;
+    &__field {
+        margin-bottom: 20px;
+        h1 {
+            font-size: 20px;
+        }
+        input {
+            width: 100%;
+        }
+        label:after {
+            content: "Examinar" !important;
+        }
+    }
+}
+.uploadModal__buttons {
+    display: flex;
+    justify-content: flex-end;
+    button {
+        margin-left: 10px;
+    }
+}

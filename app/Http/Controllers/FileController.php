@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\File;
 use App\Http\Controllers\Auth;
 use Facade\FlareClient\View;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -35,18 +36,19 @@ class FileController extends Controller
 
         $files = $request->file('file');
         $filename = $files->getClientOriginalName();
-        $filename = time(). '.' . $filename;
 
         // $path = $request->file('file')->move(public_path('docos'));
-        $path = $files->storeAs('public', $filename);
+        // $path = $files->storeAs('public', $filename);
+        $path = $request->file('file')->store('docs');
 
         $file = new File();
-        $file->name = 'Archivo 1';
+        $file->name = $request->filename;
         $file->file_name = $filename;
         $file->user_id = $request->user()->id;
         $file->file_path = $path;
         $file->save();
 
         return View('dashboard');
+        //return Storage::download($path, $filename);
     }
 }
