@@ -148,184 +148,106 @@ body {
   flex-direction: column;
 }
 .register {
+  background-color: #B2CAE0;
+  min-height: 70vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 .register .register__form {
-  margin-left: auto;
-  margin-right: auto;
+  background-color: #fff;
+  width: 600px;
   margin-top: 60px;
   margin-bottom: 60px;
-  width: 600px;
-  background-color: #ebebeb;
-  padding: 20px;
-  border-radius: 6px;
+  border-radius: 4px;
+  padding-top: 40px;
+  padding-bottom: 4s0px;
+  padding-left: 80px;
+  padding-right: 80px;
+  box-shadow: 0px 0px 7px 6px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 767px) {
   .register .register__form {
-    width: 350px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
-.register .register__form button {
-  margin-top: 10px;
-  width: 100%;
-}
-.register .register__form__title {
+.register .register__form h1 {
+  color: #1D65A6;
   font-size: 24px;
-  text-align: center;
+  font-weight: bold;
 }
-.register .register__form__container {
-  margin-top: 10px;
+.register .register__form .register__form__inputs {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 @media (max-width: 767px) {
-  .register .register__form__container {
+  .register .register__form .register__form__inputs {
     flex-direction: column;
   }
 }
-.register .register__form__container .register__form__container__left {
-  order: 1;
+.register .register__form .register__form__inputs .register__form__inputs__left {
   width: 48%;
 }
 @media (max-width: 767px) {
-  .register .register__form__container .register__form__container__left {
+  .register .register__form .register__form__inputs .register__form__inputs__left {
     width: 100%;
   }
 }
-.register .register__form__container .register__form__container__left .register__form__container__left__name {
-  margin-top: 10px;
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__name h1 {
-  font-size: 16px;
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__name input {
-  height: 40px;
-  width: 96%;
-  border-radius: 6px;
-  border-color: #adadad;
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-}
-@media (max-width: 767px) {
-  .register .register__form__container .register__form__container__left .register__form__container__left__name input {
-    width: 100%;
-  }
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__mail {
-  margin-top: 10px;
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__mail h1 {
-  font-size: 16px;
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__mail input {
-  height: 40px;
-  width: 96%;
-  border-radius: 6px;
-  border-color: #adadad;
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-}
-@media (max-width: 767px) {
-  .register .register__form__container .register__form__container__left .register__form__container__left__mail input {
-    width: 100%;
-  }
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__password {
-  margin-top: 10px;
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__password h1 {
-  font-size: 16px;
-}
-.register .register__form__container .register__form__container__left .register__form__container__left__password input {
-  height: 40px;
-  width: 96%;
-  border-radius: 6px;
-  border-color: #adadad;
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-}
-@media (max-width: 767px) {
-  .register .register__form__container .register__form__container__left .register__form__container__left__password input {
-    width: 100%;
-  }
-}
-.register .register__form__container .register__form__container__right {
-  order: 2;
+.register .register__form .register__form__inputs .register__form__inputs__right {
   width: 48%;
 }
 @media (max-width: 767px) {
-  .register .register__form__container .register__form__container__right {
+  .register .register__form .register__form__inputs .register__form__inputs__right {
     width: 100%;
   }
 }
-.register .register__form__container .register__form__container__right .register__form__container__right__lastname {
-  margin-top: 10px;
+.register .register__form .register__form__inputs .register__form__inputs__field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
-.register .register__form__container .register__form__container__right .register__form__container__right__lastname h1 {
-  font-size: 16px;
+.register .register__form .register__form__inputs .register__form__inputs__field label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1D65A6;
 }
-.register .register__form__container .register__form__container__right .register__form__container__right__lastname input {
-  height: 40px;
-  width: 96%;
-  border-radius: 6px;
-  border-color: #adadad;
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-}
-@media (max-width: 767px) {
-  .register .register__form__container .register__form__container__right .register__form__container__right__lastname input {
-    width: 100%;
-  }
-}
-.register .register__form__container .register__form__container__right .register__form__container__right__confirmMail {
-  margin-top: 10px;
-}
-.register .register__form__container .register__form__container__right .register__form__container__right__confirmMail h1 {
-  font-size: 16px;
-}
-.register .register__form__container .register__form__container__right .register__form__container__right__confirmMail input {
-  height: 40px;
-  width: 96%;
-  border-radius: 6px;
-  border-color: #adadad;
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-}
-@media (max-width: 767px) {
-  .register .register__form__container .register__form__container__right .register__form__container__right__confirmMail input {
-    width: 100%;
-  }
-}
-.register .register__form__container .register__form__container__right .register__form__container__right__fiability {
-  margin-top: 10px;
-}
-.register .register__form__container .register__form__container__right .register__form__container__right__fiability h1 {
-  font-size: 16px;
-}
-.register .register__form__container .register__form__container__right .register__form__container__right__fiability .register__form__container__right__fiability__progress {
-  margin-top: 5px;
+.register .register__form .register__form__inputs .register__form__inputs__field input {
   height: 30px;
-  width: 80%;
-  border-radius: 6px;
-  background: red;
-  background: linear-gradient(90deg, red 0%, #00ff48 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#00ff48",GradientType=1);
+  background-color: #fff;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 0 0 3px;
+  font-size: 16px;
+  outline: none;
 }
-@media (max-width: 767px) {
-  .register .register__form__container .register__form__container__right .register__form__container__right__fiability .register__form__container__right__fiability__progress {
-    width: 100%;
-  }
+.register .register__form .register__form__inputs .register__form__inputs__field input:focus {
+  border-color: #1D65A6;
+}
+.register .register__form .register__form__inputs .register__form__inputs__conditions {
+  margin-top: 40px;
+}
+.register .register__form button {
+  outline: none;
+  width: 100%;
+  height: 50px;
+  background-color: #1D65A6;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #1D65A6;
+  font-size: 20px;
+}
+.register .register__form button:hover {
+  background-color: #2a70ad;
 }
 
 .login {
+  background-color: #B2CAE0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -336,9 +258,12 @@ body {
   margin-top: 60px;
   margin-bottom: 60px;
   width: 400px;
-  background-color: #ebebeb;
+  background-color: #fff;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 12px;
+  border-color: #9badbd;
+  border-width: 2px;
+  border-style: solid;
 }
 @media (max-width: 767px) {
   .login .login__form {
@@ -352,6 +277,7 @@ body {
 .login .login__form__title {
   font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 .login .login__form__container {
   margin-top: 10px;
@@ -364,14 +290,28 @@ body {
 .login .login__form__container .login__form__container__mail h1 {
   font-size: 16px;
 }
-.login .login__form__container .login__form__container__mail input {
-  height: 40px;
-  width: 100%;
-  border-radius: 6px;
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border-color: #adadad;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0 0 2px;
+}
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field i {
+  width: 30px;
+}
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field input {
+  height: 40px;
+  width: 100%;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 0;
   padding: 10px;
+  outline: none;
+}
+.login .login__form__container .login__form__container__mail .login__form__container__mail__field:focus {
+  border-color: #B2CAE0;
 }
 .login .login__form__container .login__form__container__password {
   margin-top: 10px;
@@ -379,19 +319,25 @@ body {
 .login .login__form__container .login__form__container__password h1 {
   font-size: 16px;
 }
-.login .login__form__container .login__form__container__password input {
-  height: 40px;
-  width: 100%;
-  border-radius: 6px;
+.login .login__form__container .login__form__container__password .login__form__container__password__field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border-color: #adadad;
   border-style: solid;
-  border-width: 1px;
-  padding: 10px;
+  border-width: 0 0 2px;
 }
-@media (max-width: 767px) {
-  .login .login__form__container .login__form__container__password input {
-    width: 100%;
-  }
+.login .login__form__container .login__form__container__password .login__form__container__password__field i {
+  width: 30px;
+}
+.login .login__form__container .login__form__container__password .login__form__container__password__field input {
+  height: 40px;
+  width: 100%;
+  border-color: #adadad;
+  border-style: solid;
+  border-width: 0;
+  padding: 10px;
+  outline: none;
 }
 .login .login__form__refer {
   text-align: center;

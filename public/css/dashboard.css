@@ -1,0 +1,16 @@
+.dashboard a {
+  color: black;
+  text-decoration: none;
+}
+
+.tablaDatos {
+  display: flex;
+  align-items: center;
+}
+.tablaDatos .tablaDatos__downloadButton button {
+  display: flex;
+  justify-items: center;
+}
+.tablaDatos .tablaDatos__downloadButton button i {
+  margin-top: 3px;
+}
