@@ -19,10 +19,10 @@
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/user/create">Registrarse</a>
+                        <a class="nav-link" href="/register">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/user">Iniciar sesion</a>
+                        <a class="nav-link" href="/login">Iniciar sesion</a>
                     </li>
                 </ul>
             </div>
