@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\File;
+use App\Models\User;
 use App\Http\Controllers\Auth;
 use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Storage;
@@ -48,7 +49,21 @@ class FileController extends Controller
         $file->file_path = $path;
         $file->save();
 
-        return View('dashboard');
+        $id = auth()->id();
+        $dataset = User::find($id)->getFiles;
+        return View('dashboard')->with('dataset', $dataset);
         //return Storage::download($path, $filename);
+    }
+
+    /**
+     * Guarda un archivo en el almacenamiento y lo agrega al registro.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+    */
+    public function show($id) {
+        $owner = User::find(3);
+        $fileInstance = File::find($id);
+        return Storage::download($fileInstance->file_path, $fileInstance->file_name);
     }
 }

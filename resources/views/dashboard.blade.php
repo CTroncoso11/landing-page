@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -22,25 +21,24 @@
                             <tr>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Archivo</th>
-                                <th scope="col">Tipo</th>
                                 <th scope="col">Fecha</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($dataset as $data)
                             <tr style="">
-                                <td>Cosa {{ Auth::user()->name }}</td>
-                                <td>documento.pptx {{ Auth::user()->id }}</td>
-                                <td>PPT</td>
-                                <td>23 de Diciembre</td>
+                                <td>{{$data->name}}</td>
+                                <td>{{$data->file_name}}</td>
+                                <td>{{$data->created_at}}</td>
                                 <td>
                                     <div class="btn-group dropup">
-                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           Opciones
                                         </button>
                                         <div class="dropdown-menu tablaDatos__downloadButton">
                                             <!-- Dropdown menu links -->
-                                            <a class="dropdown-item" >
+                                            <a class="dropdown-item" href="/filedownload/{{$data->id}}">
                                                 <i>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-down" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708l2 2z"/>
@@ -71,6 +69,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
