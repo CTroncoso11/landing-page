@@ -83,6 +83,4 @@ proyecto ```landing-page``` de una forma local, alias: localhost.
 ### Equipo de desarrollo:
 * Agustín Rivas
 * Nicolás Jara
-* Nicolás Balboltín
-
 
