@@ -2,12 +2,12 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="https://amnska.cl/public/images/logo.png">
             </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
+            {{ __('Por favor confirma la contraseña antes de continuar.') }}
         </div>
 
         <!-- Validation Errors -->
@@ -17,10 +17,10 @@
             @csrf
 
             <!-- Password -->
-            <div>
-                <x-label for="password" :value="__('Password')" />
+            <div class="forgot">
+                <x-label for="password" :value="__('Contraseña')" />
 
-                <x-input id="password" class="block mt-1 w-full"
+                <x-input id="password" class="forgot__input"
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />

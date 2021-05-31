@@ -2,12 +2,12 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="images/logo.png">
             </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Olvidaste tu contraseña? No hay problema. Dejanos saber tu correo y podremos enviarte un link para reiniciar la contraseña.') }}
         </div>
 
         <!-- Session Status -->
@@ -20,15 +20,15 @@
             @csrf
 
             <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+            <div class="forgot">
+                <x-label for="email" :value="__('Correo electronico')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="forgot__input" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Enviar enlace de recuperación') }}
                 </x-button>
             </div>
         </form>

@@ -14,7 +14,7 @@ return [
     */
 
     'failed' => 'Estas credenciales no calzan con ninguna cuenta.',
-    'password' => 'La contrasena ingresada no es correcta.',
+    'password' => 'La contraseña ingresada no es correcta.',
     'throttle' => 'Demasiados intentos. Intenta de nuevo en :seconds segundos.',
 
 ];

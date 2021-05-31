@@ -42,13 +42,13 @@
                 <div class="register__form__inputs">
                     <div class="register__form__inputs__left">
                         <div class="register__form__inputs__field">
-                            <label>Contrasena</label>
+                            <label>Contraseña</label>
                             <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
                         </div>
                     </div>
                     <div class="register__form__inputs__right">
                         <div class="register__form__inputs__field">
-                            <label>Confirmar contrasena</label>
+                            <label>Confirmar contraseña</label>
                             <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
                         </div>
                     </div>

@@ -345,3 +345,18 @@ body {
         }
     }
 }
+.forgot {
+    margin-bottom: 10px;
+    &__input {
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 0px;
+        border-bottom: 3px solid #2a70ad;
+        outline: none;
+    }
+    &__input:active{
+        outline: none;
+    }
+}
