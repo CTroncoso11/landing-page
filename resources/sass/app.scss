@@ -1,5 +1,7 @@
-.cosa {
-  background-color: aqua;
-  width: 100px;
-  font-size: 16px;
+.forgot {
+    &__input {
+        border-style: solid;
+        border-radius: 0 0 2px;
+        outline: none !important;
+    }
 }
