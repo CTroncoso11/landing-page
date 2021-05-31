@@ -21,6 +21,12 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $id = auth()->id();
+    $user = User::find($id)->role;
+    //WIP: Implementacion de un No filtro de usuario
+    if  ($user != 'user')   {
+        $dataset = User::find($id)->getFiles;
+        return view('dashboard')->with('dataset', $dataset);
+    };
     $dataset = User::find($id)->getFiles;
     return view('dashboard')->with('dataset', $dataset);
 })->middleware(['auth'])->name('dashboard');
