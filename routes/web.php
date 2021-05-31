@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,13 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $id = auth()->id();
+    $dataset = User::find($id)->getFiles;
+    return view('dashboard')->with('dataset', $dataset);
 })->middleware(['auth'])->name('dashboard');
+
+Route::post('dashboard', [FileController::class, 'store']);
+
+Route::Resource('filedownload', 'App\Http\Controllers\FileController');
 
 require __DIR__.'/auth.php';

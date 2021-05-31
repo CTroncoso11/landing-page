@@ -93,4 +93,8 @@ class UserController extends Controller
     {
         //
     }
+
+    function findFiles($id){
+        return User::find($id)->getFiles;
+    }
 }

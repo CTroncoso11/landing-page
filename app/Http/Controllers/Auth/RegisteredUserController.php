@@ -21,6 +21,7 @@ class RegisteredUserController extends Controller
     public function create()
     {
         // return view('auth.register');
+        //$user = User::find(1)->getFiles;
         return view('user.register');
     }
 
