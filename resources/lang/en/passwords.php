@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'reset' => 'Tu contrasena ha sido reiniciada!',
-    'sent' => 'Te hemos enviado por correo el enlace para restablecer la contrasena!',
-    'throttled' => 'Porfavor, espera antes de volver a intentarlo.',
+    'reset' => 'Tu contraseña ha sido reiniciada!',
+    'sent' => 'Te hemos enviado por correo el enlace para restablecer la contraseña!',
+    'throttled' => 'Por favor, espera antes de volver a intentarlo.',
     'token' => 'Este enlace de restablecimiento es invalido.',
     'user' => "No hemos encontrado un usuario con ese correo.",
 
