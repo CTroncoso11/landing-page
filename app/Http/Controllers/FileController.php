@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\File;
 use App\Models\User;
-use App\Http\Controllers\Auth;
-use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Storage;
+use PHPUnit\TextUI\XmlConfiguration\Logging\Logging;
+use SebastianBergmann\Environment\Console;
 
 class FileController extends Controller
 {
@@ -62,8 +62,45 @@ class FileController extends Controller
      * @return \Illuminate\Http\Response
     */
     public function show($id) {
-        $owner = User::find(3);
         $fileInstance = File::find($id);
         return Storage::download($fileInstance->file_path, $fileInstance->file_name);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $file = File::find($id);
+        $file->name = $request->get('new-filename');
+        $file->save();
+        return redirect('/dashboard');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $file = File::find($id);
+        $file->delete();
+        return redirect('/dashboard');
     }
 }
