@@ -1,5 +1,6 @@
 @php
-$id = 2;
+    $id = 2;
+    $selected = 0;
 @endphp
 <x-app-layout>
     <x-slot name="header">
@@ -36,8 +37,6 @@ $id = 2;
                             Agregar archivos
                         </button>
                         @include('user.upload')
-                        @include('user.rename')
-                        @include('user.delete')
                         <input placeholder="Buscar">
                     </div>
                     <table class="table table-bordered table-striped mt-4 tablaDatos">
@@ -98,7 +97,7 @@ $id = 2;
                                                             Renombrar
                                                         </a>
                                                         <a class="dropdown-item" type="button" data-toggle="modal"
-                                                            data-target="#Delete{{ $data->id }}">
+                                                            data-target="#Delete{{$id = $data->id}}">
                                                             <i>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                     height="16" fill="currentColor" class="bi bi-trash"
@@ -115,6 +114,8 @@ $id = 2;
                                                 </div>
                                             </td>
                                         </tr>
+                                        @include('user.rename')
+                                        @include('user.delete')
                                     @endif
                                 @endforeach
                             @endif
@@ -148,7 +149,7 @@ $id = 2;
                                                     {{-- button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-upload-{{ $cosa = Auth::user()->id}}" --}}
                                                     {{-- <a class="dropdown-item" href="/file/{{$data->id}}/edit"> --}}
                                                     <a class="dropdown-item" type="button" data-toggle="modal"
-                                                        data-target="#Rename"
+                                                        data-target="#Rename{{$id = $data->id}}"
                                                         onclick="setFileID({{ $data->id }})">
                                                         <i>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -163,7 +164,7 @@ $id = 2;
                                                         Renombrar
                                                     </a>
                                                     <a class="dropdown-item" type="button" data-toggle="modal"
-                                                        data-target="#Delete">
+                                                        data-target="#Delete{{$id = $data->id}}">
                                                         <i>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-trash"
@@ -180,6 +181,8 @@ $id = 2;
                                             </div>
                                         </td>
                                     </tr>
+                                    @include('user.rename')
+                                    @include('user.delete')
                                 @endforeach
                             @endif
                         </tbody>
@@ -188,11 +191,8 @@ $id = 2;
             </div>
         </div>
     </div>
-
-    @include('user.rename')
-    @include('user.delete')
-    @include('user.upload')
 </x-app-layout>
+
 <script>
     function setearIDCookies(id) {
         localStorage.setItem('searchID', id);
@@ -205,3 +205,64 @@ $id = 2;
         document.cookie = 'fileid=' + id;
     }
 </script>
+
+
+<div class="modal fade" id="Rename" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Cambiar nombre</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/file/{{$selected}}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="uploadModal">
+                <div class="uploadModal__field">
+                    <h1>Nuevo nombre</h1>
+                    <input name="new-filename" type="text" placeholder="Documento 2021" required >
+                </div>
+            </div>
+            <hr>
+            <div class="uploadModal__buttons">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">
+                  Cambiar nombre
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Borrar archivo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/file/{{$selected}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <div class="uploadModal">
+                <div class="uploadModal__field">
+                    <h1>Desea borrar el archivo?</h1>
+                    <button type="submit" class="btn btn-danger">Borrar archivo</button>
+                </div>
+            </div>
+            <hr>
+            <div class="uploadModal__buttons">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
