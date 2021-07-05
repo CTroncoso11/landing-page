@@ -1,16 +1,31 @@
+@import "mixins.scss";
 .dashboard {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    @include media(xs) {
+        flex-direction: column;
+    }
     a {
+        order: 1;
         color: black;
         text-decoration: none;
     }
     input {
+        order: 2;
         outline: none;
+        padding: 10px;
         border-style: solid;
         border-width: 0 0 2px;
         border-color: grey;
+        background-color: rgb(244, 244, 244);
+
+        @include media(xs) {
+            margin-top: 10px;
+            width: 100%;
+        }
     }
+
 }
 .tablaDatos {
     display: flex;
@@ -23,6 +38,10 @@
                 margin-right: 10px;
             }
         }
+    }
+    @include media(xs) {
+        overflow: auto;
+        overflow-y: visible;
     }
 }
 .uploadModal {
@@ -39,6 +58,10 @@
         label:after {
             content: "Examinar" !important;
         }
+    }
+    @include media(xs) {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 .uploadModal__buttons {

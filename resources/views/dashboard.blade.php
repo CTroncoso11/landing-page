@@ -37,9 +37,9 @@
                             Agregar archivos
                         </button>
                         @include('user.upload')
-                        <input placeholder="Buscar">
+                        <input placeholder="Buscar" id="myInput">
                     </div>
-                    <table class="table table-bordered table-striped mt-4 tablaDatos">
+                    <table class="table table-bordered table-striped mt-4 tablaDatos"  >
                         <thead>
                             <tr>
                                 <th scope="col">Nombre</th>
@@ -48,7 +48,8 @@
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="myTable">
+                            {{-- Si es administrador --}}
                             @if (Auth::user()->role != 'user')
                                 @foreach ($dataset[1] as $data)
                                     @if ($data->user_id == $id)
@@ -119,6 +120,7 @@
                                     @endif
                                 @endforeach
                             @endif
+                            {{-- Si es usuario normal --}}
                             @if (Auth::user()->role == 'user')
                                 @foreach ($dataset as $data)
                                     <tr>
@@ -193,18 +195,6 @@
     </div>
 </x-app-layout>
 
-<script>
-    function setearIDCookies(id) {
-        localStorage.setItem('searchID', id);
-        document.cookie = "search=" + id;
-        location.reload();
-    }
-
-    function setFileID(id) {
-        console.log(id);
-        document.cookie = 'fileid=' + id;
-    }
-</script>
 
 
 <div class="modal fade" id="Rename" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -266,3 +256,25 @@
       </div>
     </div>
 </div>
+
+<script>
+    function setearIDCookies(id) {
+        localStorage.setItem('searchID', id);
+        document.cookie = "search=" + id;
+        location.reload();
+    }
+
+    function setFileID(id) {
+        console.log(id);
+        document.cookie = 'fileid=' + id;
+    }
+
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+</script>
