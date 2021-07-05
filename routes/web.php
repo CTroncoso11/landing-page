@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $id = auth()->id();
-    
+
     if  ((User::find($id)->role) != 'user')   {
         $data = array();
         $first = array();
@@ -38,7 +38,7 @@ Route::get('/dashboard', function () {
         array_push($data, $first);
         array_push($second, File::all());
         array_push($data, $second[0]);
-        
+
         // echo json_encode($data[0][0]);
         // echo json_encode($data[1][0]);
         // echo json_encode($data[1][1]);
@@ -46,7 +46,7 @@ Route::get('/dashboard', function () {
         //     //print($tmp);
         //     echo json_encode($tmp);
         // }
-        
+
         // $users_data = array();
         // foreach($users as $user){
         //     $files = User::find($user->id)->getFiles;
@@ -56,6 +56,8 @@ Route::get('/dashboard', function () {
         // Log::info($users);
         // array_push($data, $users);
         // array_push($data, $files);
+
+
        return view('dashboard')->with('dataset', $data);
     };
     $dataset = User::find($id)->getFiles;

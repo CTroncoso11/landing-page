@@ -1,6 +1,6 @@
 @php
-$id = 2;
-$selected = 0;
+    $id = 2;
+    $selected = 0;
 @endphp
 <x-app-layout>
     <x-slot name="header">
@@ -283,12 +283,12 @@ $selected = 0;
 </div>
 
 <script>
+
     function setearIDCookies(id) {
         localStorage.setItem('searchID', id);
         document.cookie = "search=" + id;
         location.reload();
     }
-
     function setFileID(id) {
         console.log(id);
         document.cookie = 'fileid=' + id;
