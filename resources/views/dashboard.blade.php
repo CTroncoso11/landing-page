@@ -1,5 +1,4 @@
 @php
-    $id = 2;
     $selected = 0;
 @endphp
 <x-app-layout>
@@ -14,12 +13,9 @@
                     Usuarios
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    @foreach ($dataset[0] as $usuarios)
-                        <a class="dropdown-item" onclick="setearIDCookies({{ $usuarios->id }})">
-                            {{ $usuarios->name }}
-                            @php
-                                $id = $_COOKIE['search'];
-                            @endphp
+                    @foreach ($dataset[0] as $users)
+                        <a class="dropdown-item" onclick="setearIDCookies({{ $users->id }})">
+                            {{ $users->name }}
                         </a>
                     @endforeach
                 </div>
@@ -59,7 +55,7 @@
                             {{-- Si es administrador --}}
                             @if (Auth::user()->role != 'user')
                                 @foreach ($dataset[1] as $data)
-                                    @if ($data->user_id == $id)
+                                    @if ($data->user_id == $_COOKIE['search'])
                                         <tr class="tablaDatos__body">
                                             <td class="tablaDatos__body__name">{{ $data->name }}</td>
                                             <td class="tablaDatos__body__filename">{{ $data->file_name }}</td>

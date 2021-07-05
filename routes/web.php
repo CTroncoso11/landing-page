@@ -38,7 +38,6 @@ Route::get('/dashboard', function () {
         array_push($data, $first);
         array_push($second, File::all());
         array_push($data, $second[0]);
-
         // echo json_encode($data[0][0]);
         // echo json_encode($data[1][0]);
         // echo json_encode($data[1][1]);
@@ -58,8 +57,9 @@ Route::get('/dashboard', function () {
         // array_push($data, $files);
 
 
-       return view('dashboard')->with('dataset', $data);
+        return view('dashboard')->with('dataset', $data);
     };
+    //  Si es usuario normal, no hay problema alguno
     $dataset = User::find($id)->getFiles;
     return view('dashboard')->with('dataset', $dataset);
 })->middleware(['auth'])->name('dashboard');
