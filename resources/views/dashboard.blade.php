@@ -1,6 +1,6 @@
 @php
-    $id = 2;
-    $selected = 0;
+$id = 2;
+$selected = 0;
 @endphp
 <x-app-layout>
     <x-slot name="header">
@@ -37,15 +37,22 @@
                             Agregar archivos
                         </button>
                         @include('user.upload')
-                        <input placeholder="Buscar" id="myInput">
+                        <div class="dashboard__search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                            <input placeholder="Buscar" id="myInput">
+                        </div>
                     </div>
-                    <table class="table table-bordered table-striped mt-4 tablaDatos"  >
+                    <table class="table table-bordered table-striped mt-4 tablaDatos">
                         <thead>
                             <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Archivo</th>
-                                <th scope="col">Fecha</th>
-                                <th scope="col"></th>
+                                <th scope="col" class="tablaDatos__name">Nombre</th>
+                                <th scope="col" class="tablaDatos__filename">Archivo</th>
+                                <th scope="col" class="tablaDatos__date">Fecha</th>
+                                <th scope="col" class="tablaDatos__options"></th>
                             </tr>
                         </thead>
                         <tbody id="myTable">
@@ -53,16 +60,24 @@
                             @if (Auth::user()->role != 'user')
                                 @foreach ($dataset[1] as $data)
                                     @if ($data->user_id == $id)
-                                        <tr>
-                                            <td>{{ $data->name }}</td>
-                                            <td>{{ $data->file_name }}</td>
-                                            <td>{{ $data->created_at }}</td>
-                                            <td>
-                                                <div class="btn-group dropup">
+                                        <tr class="tablaDatos__body">
+                                            <td class="tablaDatos__body__name">{{ $data->name }}</td>
+                                            <td class="tablaDatos__body__filename">{{ $data->file_name }}</td>
+                                            <td class="tablaDatos__body__date">{{ $data->created_at }}</td>
+                                            <td class="tablaDatos__body__options">
+                                                <div class="btn-group dropup tablaDatos__body__options__div">
                                                     <button type="button" class="btn btn-info dropdown-toggle"
                                                         data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                        Opciones
+                                                        <a class="default">Opciones</a>
+                                                        <a class="mobile">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="currentColor"
+                                                                class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                            </svg>
+                                                        </a>
                                                     </button>
                                                     <div class="dropdown-menu tablaDatos__downloadButton">
                                                         <!-- Dropdown menu links -->
@@ -98,7 +113,7 @@
                                                             Renombrar
                                                         </a>
                                                         <a class="dropdown-item" type="button" data-toggle="modal"
-                                                            data-target="#Delete{{$id = $data->id}}">
+                                                            data-target="#Delete{{ $id = $data->id }}">
                                                             <i>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                     height="16" fill="currentColor" class="bi bi-trash"
@@ -123,22 +138,30 @@
                             {{-- Si es usuario normal --}}
                             @if (Auth::user()->role == 'user')
                                 @foreach ($dataset as $data)
-                                    <tr>
-                                        <td>{{ $data->name }}</td>
-                                        <td>{{ $data->file_name }}</td>
-                                        <td>{{ $data->created_at }}</td>
-                                        <td>
-                                            <div class="btn-group dropup">
+                                    <tr class="tablaDatos__body">
+                                        <td class="tablaDatos__body__name">{{ $data->name }}</td>
+                                        <td class="tablaDatos__body__filename">{{ $data->file_name }}</td>
+                                        <td class="tablaDatos__body__date">{{ $data->created_at }}</td>
+                                        <td class="tablaDatos__body__options">
+                                            <div class="btn-group dropup tablaDatos__body__options__div">
                                                 <button type="button" class="btn btn-info dropdown-toggle"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Opciones
+                                                    <a class="default">Opciones</a>
+                                                    <a class="mobile">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            fill="currentColor" class="bi bi-three-dots-vertical"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                        </svg>
+                                                    </a>
                                                 </button>
                                                 <div class="dropdown-menu tablaDatos__downloadButton">
                                                     <!-- Dropdown menu links -->
                                                     <a class="dropdown-item" href="/filedownload/{{ $data->id }}">
                                                         <i>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" fill="currentColor"
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="currentColor"
                                                                 class="bi bi-cloud-arrow-down" viewBox="0 0 16 16">
                                                                 <path fill-rule="evenodd"
                                                                     d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708l2 2z" />
@@ -151,7 +174,7 @@
                                                     {{-- button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-upload-{{ $cosa = Auth::user()->id}}" --}}
                                                     {{-- <a class="dropdown-item" href="/file/{{$data->id}}/edit"> --}}
                                                     <a class="dropdown-item" type="button" data-toggle="modal"
-                                                        data-target="#Rename{{$id = $data->id}}"
+                                                        data-target="#Rename{{ $id = $data->id }}"
                                                         onclick="setFileID({{ $data->id }})">
                                                         <i>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -166,7 +189,7 @@
                                                         Renombrar
                                                     </a>
                                                     <a class="dropdown-item" type="button" data-toggle="modal"
-                                                        data-target="#Delete{{$id = $data->id}}">
+                                                        data-target="#Delete{{ $id = $data->id }}">
                                                         <i>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor" class="bi bi-trash"
@@ -197,63 +220,65 @@
 
 
 
-<div class="modal fade" id="Rename" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="Rename" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Cambiar nombre</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="/file/{{$selected}}" method="POST">
-            @csrf
-            @method('PUT')
-            <div class="uploadModal">
-                <div class="uploadModal__field">
-                    <h1>Nuevo nombre</h1>
-                    <input name="new-filename" type="text" placeholder="Documento 2021" required >
-                </div>
-            </div>
-            <hr>
-            <div class="uploadModal__buttons">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">
-                  Cambiar nombre
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Cambiar nombre</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-          </form>
+            <div class="modal-body">
+                <form action="/file/{{ $selected }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="uploadModal">
+                        <div class="uploadModal__field">
+                            <h1>Nuevo nombre</h1>
+                            <input name="new-filename" type="text" placeholder="Documento 2021" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="uploadModal__buttons">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">
+                            Cambiar nombre
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
 </div>
-<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Borrar archivo</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="/file/{{$selected}}" method="POST">
-            @csrf
-            @method('DELETE')
-            <div class="uploadModal">
-                <div class="uploadModal__field">
-                    <h1>Desea borrar el archivo?</h1>
-                    <button type="submit" class="btn btn-danger">Borrar archivo</button>
-                </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Borrar archivo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <hr>
-            <div class="uploadModal__buttons">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            <div class="modal-body">
+                <form action="/file/{{ $selected }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div class="uploadModal">
+                        <div class="uploadModal__field">
+                            <h1>Desea borrar el archivo?</h1>
+                            <button type="submit" class="btn btn-danger">Borrar archivo</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="uploadModal__buttons">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
             </div>
-          </form>
         </div>
-      </div>
     </div>
 </div>
 
@@ -269,12 +294,12 @@
         document.cookie = 'fileid=' + id;
     }
 
-    $(document).ready(function(){
-      $("#myInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myTable tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
         });
-      });
     });
 </script>

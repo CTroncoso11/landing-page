@@ -17,6 +17,7 @@
                     <input name="filename" type="text" placeholder="Documento hipoteca" required>
                 </div>
                 <div class="uploadModal__field">
+                    <h1>Adjuntar archivo</h1>
                     <div class="input-group mb-3">
                         <div class="custom-file">
                             <input type="file" name="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>

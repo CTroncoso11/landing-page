@@ -13,7 +13,9 @@
   color: black;
   text-decoration: none;
 }
-.dashboard input {
+.dashboard .dashboard__search {
+  display: flex;
+  flex-direction: row;
   order: 2;
   outline: none;
   padding: 10px;
@@ -23,10 +25,19 @@
   background-color: #f4f4f4;
 }
 @media (max-width: 767px) {
-  .dashboard input {
+  .dashboard .dashboard__search {
     margin-top: 10px;
     width: 100%;
   }
+}
+.dashboard .dashboard__search input {
+  background-color: #f4f4f4;
+  outline: none;
+  color: black;
+}
+.dashboard .dashboard__search svg {
+  margin-top: 4px;
+  margin-right: 6px;
 }
 
 .tablaDatos {
@@ -41,9 +52,42 @@
   margin-right: 10px;
 }
 @media (max-width: 767px) {
-  .tablaDatos {
-    overflow: auto;
-    overflow-y: visible;
+  .tablaDatos__date {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__date {
+    display: none;
+  }
+}
+.tablaDatos__body__options__div button {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__options__div button {
+    content: "";
+    width: 50px;
+  }
+}
+.tablaDatos__body__options__div button .default {
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__options__div button .default {
+    display: none;
+  }
+}
+.tablaDatos__body__options__div button .mobile {
+  text-decoration: none;
+  color: #fff;
+  display: none;
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__options__div button .mobile {
+    display: block;
   }
 }
 
@@ -59,6 +103,8 @@
 }
 .uploadModal__field input {
   width: 100%;
+  border-color: #dfdfdf;
+  border-radius: 6px;
 }
 .uploadModal__field label:after {
   content: "Examinar" !important;
