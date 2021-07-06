@@ -2,7 +2,7 @@
  <h3 align="center">Landing Page </h3>
 <p align="center">
   <a href="https://github.com/pabpobar/Tarea1-Landing-Page/tree/LandingPage-Grupo9">
-    <img src="https://www.amnska.cl/public/images/logo-white.png" alt="Logo" width="300" height="56">
+    <img src="https://www.amnska.cl/public/images/logo.png" alt="Logo" width="300" height="56">
   </a>
 
  
