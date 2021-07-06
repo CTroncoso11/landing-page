@@ -36,7 +36,7 @@
 ## Acerca del Proyecto
 
 <p align="center">
-      <img src="images/producto1.png" alt="Logo" width="1987" height="935">
+      <img src="https://www.amnska.cl/public/images/logo.png" alt="Logo" width="300" height="56">
   </a>
 
 Proyecto en cual se le permitirá a un usuario poder almacenar y administrar sus archivos digitales para poder mejorar su organización, además de poder digitalizar mediante el uso de fotos, documentos físicos. El usuario podrá, renombrar archivos al subirlos, borrar archivos y también descargar archivos que ya fueron subidos.
