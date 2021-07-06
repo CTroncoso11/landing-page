@@ -43,7 +43,8 @@ Proyecto en cual se le permitirá a un usuario poder almacenar y administrar sus
 
 ### Construido con:
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Para la realizacion de este proyecto, por temas de bugs en el desarrollo, se utilizaron 2 versiones de Bootstrap, la moderna para la pagina ```home```
+y la version 'legacy' 4.6.x para el dashboard interno.
 * [Bootstrap](https://getbootstrap.com)
 * [Laravel](https://laravel.com)
 
@@ -64,7 +65,7 @@ proyecto ```landing-page``` de una forma local, alias: localhost.
 
 ### Instalación
 
-1. Clonar el repositorio desde ```https://github.com/TheCrist422/landing-page```
+1. Clonar el repositorio desde ```https://github.com/CristianTroncoso99/landing-page```
 2. Instalar los paquetes de dependencias de composer con ```composer install```
 3. Instalar los paquetes de dependencias con ```npm install``` o ```yarn install```
 4. Copiar el archivo ```.env.example``` y renombrarlo como ```.env``` solamente
