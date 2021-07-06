@@ -1,16 +1,43 @@
 .dashboard {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+}
+@media (max-width: 767px) {
+  .dashboard {
+    flex-direction: column;
+  }
 }
 .dashboard a {
+  order: 1;
   color: black;
   text-decoration: none;
 }
-.dashboard input {
+.dashboard .dashboard__search {
+  display: flex;
+  flex-direction: row;
+  order: 2;
   outline: none;
+  padding: 10px;
   border-style: solid;
   border-width: 0 0 2px;
   border-color: grey;
+  background-color: #f4f4f4;
+}
+@media (max-width: 767px) {
+  .dashboard .dashboard__search {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+.dashboard .dashboard__search input {
+  background-color: #f4f4f4;
+  outline: none;
+  color: black;
+}
+.dashboard .dashboard__search svg {
+  margin-top: 4px;
+  margin-right: 6px;
 }
 
 .tablaDatos {
@@ -23,6 +50,45 @@
 }
 .tablaDatos .tablaDatos__downloadButton a i {
   margin-right: 10px;
+}
+@media (max-width: 767px) {
+  .tablaDatos__date {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__date {
+    display: none;
+  }
+}
+.tablaDatos__body__options__div button {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__options__div button {
+    content: "";
+    width: 50px;
+  }
+}
+.tablaDatos__body__options__div button .default {
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__options__div button .default {
+    display: none;
+  }
+}
+.tablaDatos__body__options__div button .mobile {
+  text-decoration: none;
+  color: #fff;
+  display: none;
+}
+@media (max-width: 767px) {
+  .tablaDatos__body__options__div button .mobile {
+    display: block;
+  }
 }
 
 .uploadModal {
@@ -37,9 +103,17 @@
 }
 .uploadModal__field input {
   width: 100%;
+  border-color: #dfdfdf;
+  border-radius: 6px;
 }
 .uploadModal__field label:after {
   content: "Examinar" !important;
+}
+@media (max-width: 767px) {
+  .uploadModal {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .uploadModal__buttons {

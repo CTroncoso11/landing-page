@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modal-upload-{{$cosa}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modal-upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -17,6 +17,7 @@
                     <input name="filename" type="text" placeholder="Documento hipoteca" required>
                 </div>
                 <div class="uploadModal__field">
+                    <h1>Adjuntar archivo</h1>
                     <div class="input-group mb-3">
                         <div class="custom-file">
                             <input type="file" name="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>

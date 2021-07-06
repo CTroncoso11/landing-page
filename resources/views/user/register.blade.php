@@ -53,8 +53,17 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" tabindex="7">Registrarse</button>
+                <button type="submit" tabindex="7" onclick="setearIDCookies(0)">
+                    Registrarse
+                </button>
             </form>
         </div>
     </div>
 @endsection
+<script>
+    function setearIDCookies(id) {
+        localStorage.setItem('searchID', id);
+        document.cookie = "search=" + id;
+        location.reload();
+    }
+</script>

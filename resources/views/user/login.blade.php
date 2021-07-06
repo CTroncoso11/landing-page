@@ -50,7 +50,7 @@
                         </div>
                     @endif
 
-                    <x-button class="ml-3 btn btn-secondary">
+                    <x-button class="ml-3 btn btn-secondary" onclick="setearIDCookies(0)">
                         {{ __('Iniciar sesion') }}
                     </x-button>
                 </div>
@@ -58,3 +58,10 @@
         </div>
     </div>
 @stop
+<script>
+    function setearIDCookies(id) {
+        localStorage.setItem('searchID', id);
+        document.cookie = "search=" + id;
+        location.reload();
+    }
+</script>
